@@ -1,0 +1,71 @@
+# Copyright (c) 2020, Oracle and/or its affiliates. All rights reserved.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+title: "Create a ATP in Oracle Cloud Infrastructure"
+stackDescription: ${Messages.solutionsHub.solutions.autonomousTransactionProcessing.stackDescription()}
+schemaVersion: 1.1.0
+version: "20200301"
+locale: "en"
+
+variableGroups:
+  - title: ${Messages.solutionsHub.generalConfig()}
+    visible: false
+    variables:
+    - compartment_ocid
+    - region
+    - tenancy_ocid
+    - autonomous_database_is_dedicated
+    - autonomous_database_license_model
+    - autonomous_database_db_workload
+    - autonomous_data_warehouse_db_workload
+
+  - title: ${Messages.solutionsHub.requiredConfig()}
+    visible: true
+    variables:
+    - autonomous_data_warehouse_db_name
+    - autonomous_data_warehouse_display_name
+    - autonomous_database_db_name 
+    - autonomous_database_display_name
+    - autonomous_database_whitelisted_ips 
+
+variables:
+
+  compartment_ocid:
+    type: oci:identity:compartment:id
+    # type: string
+    required: true
+    title: ${Messages.solutionsHub.genericVariables.compartment.title()}
+    description: ${Messages.solutionsHub.genericVariables.compartment.description()}
+  
+  region:
+    type: oci:identity:region:name
+    required: true
+    title: ${Messages.solutionsHub.genericVariables.region.title()}
+    description: ${Messages.solutionsHub.genericVariables.region.description()}
+
+  autonomous_data_warehouse_db_name:
+    type: string
+    required: true
+    default: "adbw1"
+    title: ${Messages.solutionsHub.solutions.autonomousTransactionProcessing.variables.autonomous_data_warehouse_db_name.title()}
+    description: ${Messages.solutionsHub.solutions.autonomousTransactionProcessing.variables.autonomous_data_warehouse_db_name.description()}
+
+  autonomous_data_warehouse_display_name:
+    type: string
+    required: true
+    default: "example_autonomous_data_warehouse"
+    title: ${Messages.solutionsHub.solutions.autonomousTransactionProcessing.variables.autonomous_data_warehouse_display_name.title()}
+    description: ${Messages.solutionsHub.solutions.autonomousTransactionProcessing.variables.autonomous_data_warehouse_display_name.description()}
+
+  autonomous_database_db_name:
+    type: string
+    required: true
+    default: "adbdb1"
+    title: ${Messages.solutionsHub.solutions.autonomousTransactionProcessing.variables.autonomous_database_db_name.title()}
+    description: ${Messages.solutionsHub.solutions.autonomousTransactionProcessing.variables.autonomous_database_db_name.description()}
+
+  autonomous_database_display_name:
+    type: string
+    required: true
+    default: "example_autonomous_database"
+    title: ${Messages.solutionsHub.solutions.autonomousTransactionProcessing.variables.autonomous_database_display_name.title()}
+    description: ${Messages.solutionsHub.solutions.autonomousTransactionProcessing.variables.autonomous_database_display_name.description()}

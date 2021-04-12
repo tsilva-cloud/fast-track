@@ -1,0 +1,17 @@
+"atpdb.0002": {
+    "solutionExposure": "prod",
+    "name": "${Messages.solutionsHub.solutions.autonomousTransactionProcessing.solutionName()}",
+    "description": "${Messages.solutionsHub.solutions.autonomousTransactionProcessing.stackDescription()}",
+    "longDescription": {
+        "description": "${Messages.solutionsHub.solutions.autonomousTransactionProcessing.longDescription()}"
+    },
+    "icon": {
+        "iconLine1": "ATP",
+        "iconLine2": "Instance",
+        "iconLine3": ""
+    },
+    "terraformVersion": "0.12.x",
+    "isFreeTier": false,
+    "type": "service",
+    "categoryId": "1"
+}
